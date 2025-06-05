@@ -1,9 +1,12 @@
 {
   "name": "birthday-bot-contracts",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     "./package.json": "./package.json",
     ".": {
