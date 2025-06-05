@@ -1,22 +1,15 @@
 {
   "name": "birthday-bot-contracts",
   "version": "0.1.5",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "dist"
+  },
   "files": [
     "dist"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
   "scripts": {
-    "build": "tsc --project tsconfig.json",
+    "build": "rm -rf dist && tsc --project tsconfig.json",
     "dev": "tsc --watch --project tsconfig.json",
     "prepublishOnly": "pnpm build"
   },
