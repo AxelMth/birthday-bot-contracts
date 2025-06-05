@@ -15,8 +15,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "dev": "tsc --watch --project tsconfig.json",
-    "prepublishOnly": "pnpm build",
-    "publish": "pnpm publish"
+    "prepublishOnly": "pnpm build"
   },
   "dependencies": {
     "@ts-rest/core": "^3.52.1",
