@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  birthday-bot-contracts: link:../../Library/pnpm/global/5/node_modules/birthday-bot-contracts
-
 importers:
 
   .:
@@ -14,9 +11,6 @@ importers:
       '@ts-rest/core':
         specifier: ^3.52.1
         version: 3.52.1(zod@3.25.36)
-      birthday-bot-contracts:
-        specifier: link:../../Library/pnpm/global/5/node_modules/birthday-bot-contracts
-        version: link:../../Library/pnpm/global/5/node_modules/birthday-bot-contracts
       zod:
         specifier: ^3.24.2
         version: 3.25.36
