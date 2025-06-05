@@ -3,7 +3,7 @@ name: Publish package version
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
