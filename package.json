@@ -21,13 +21,7 @@
   },
   "dependencies": {
     "@ts-rest/core": "^3.52.1",
-    "birthday-bot-contracts": "link:../../Library/pnpm/global/5/node_modules/birthday-bot-contracts",
     "zod": "^3.24.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "birthday-bot-contracts": "link:../../Library/pnpm/global/5/node_modules/birthday-bot-contracts"
-    }
   },
   "devDependencies": {
     "vite": "^6.3.5"
