@@ -22,8 +22,6 @@ jobs:
           version: 10
 
       - uses: actions/setup-node@v4
-        with:
-          registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
