@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const sendTodayBirthdayMessagesBodySchema = z.object({});
+export const sendTodayBirthdayMessagesBodySchema = z.undefined()
 
 export const sendTodayBirthdayMessagesResponseSchema = z.object({
   message: z.string(),
