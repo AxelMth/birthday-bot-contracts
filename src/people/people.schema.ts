@@ -1,5 +1,13 @@
 import { z } from 'zod';
 
+// Common schemas
+export const communicationSchema = z.object({
+  id: z.number(),
+  personId: z.number(),
+  application: z.string(),
+  metadata: z.record(z.string(), z.string()),
+});
+
 // Create person
 export const createPersonBodySchema = z.object({
   name: z.string(),
@@ -20,12 +28,15 @@ export const updatePersonByIdParamsSchema = z.object({
 export const updatePersonByIdBodySchema = z.object({
   name: z.string(),
   birthdate: z.coerce.date(),
+  application: z.string(),
+  metadata: z.record(z.string(), z.string()),
 });
 
 export const updatePersonByIdResponseSchema = z.object({
   id: z.number(),
   name: z.string(),
   birthdate: z.coerce.date(),
+  communications: z.array(communicationSchema),
 });
 
 // Get person by ID
@@ -37,13 +48,7 @@ export const getPersonByIdResponseSchema = z.object({
   id: z.number(),
   name: z.string(),
   birthdate: z.coerce.date(),
-  communications: z.array(
-    z.object({
-      id: z.number(),
-      personId: z.number(),
-      application: z.string(),
-    })
-  ),
+  communications: z.array(communicationSchema),
 });
 
 // Get people
@@ -60,13 +65,7 @@ export const getPeopleResponseSchema = z.object({
       id: z.number(),
       name: z.string(),
       birthdate: z.coerce.date(),
-      communications: z.array(
-        z.object({
-          id: z.number(),
-          personId: z.number(),
-          application: z.string(),
-        })
-      ),
+      communications: z.array(communicationSchema),
     })
   ),
 });
