@@ -5,7 +5,7 @@ export const communicationSchema = z.object({
   id: z.number(),
   personId: z.number(),
   application: z.string(),
-  metadata: z.record(z.string(), z.string()),
+  metadata: z.record(z.string(), z.string()).nullable(),
 });
 
 // Create person
@@ -29,7 +29,7 @@ export const updatePersonByIdBodySchema = z.object({
   name: z.string(),
   birthdate: z.coerce.date(),
   application: z.string(),
-  metadata: z.record(z.string(), z.string()),
+  metadata: z.record(z.string(), z.string()).nullable(),
 });
 
 export const updatePersonByIdResponseSchema = z.object({
