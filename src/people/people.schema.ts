@@ -48,6 +48,7 @@ export const getPersonByIdResponseSchema = z.object({
 
 // Get people
 export const getPeopleQuerySchema = z.object({
+  search: z.string().optional(),
   pageSize: z.coerce.number().optional().default(10),
   pageNumber: z.coerce.number().optional().default(1),
 });
