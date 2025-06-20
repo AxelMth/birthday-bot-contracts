@@ -1,4 +1,4 @@
-export { peopleContract } from './people.contract.js';
+export { peopleContract } from './people.contract';
 export {
   getPeopleQuerySchema,
   getPeopleResponseSchema,
@@ -9,4 +9,4 @@ export {
   updatePersonByIdParamsSchema,
   updatePersonByIdBodySchema,
   updatePersonByIdResponseSchema,
-} from './people.schema.js';
+} from './people.schema';

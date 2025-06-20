@@ -1,1 +1,1 @@
-export { birthdayContract } from './birthday.contract.js';
+export { birthdayContract } from './birthday.contract';
