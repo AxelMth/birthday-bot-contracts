@@ -5,7 +5,7 @@ export const communicationSchema = z.object({
   id: z.number(),
   personId: z.number(),
   application: z.string(),
-  metadata: z.record(z.string(), z.string()).nullable(),
+  metadata: z.object({}).nullable(),
 });
 
 // Create person
