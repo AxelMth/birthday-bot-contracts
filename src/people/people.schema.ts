@@ -5,7 +5,7 @@ export const personSchema = z.object({
   name: z.string(),
   birthdate: z.coerce.date(),
   application: z.string(),
-  metadata: z.object({}).nullable(),
+  metadata: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.null()])).nullable(),
 });
 
 // Create person
