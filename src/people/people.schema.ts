@@ -1,55 +1,37 @@
 import { z } from 'zod';
 
-// Common schemas
-export const communicationSchema = z.object({
+export const personSchema = z.object({
   id: z.number(),
-  personId: z.number(),
+  name: z.string(),
+  birthdate: z.coerce.date(),
   application: z.string(),
   metadata: z.object({}).nullable(),
 });
 
 // Create person
-export const createPersonBodySchema = z.object({
-  name: z.string(),
-  birthdate: z.coerce.date(),
+export const createPersonBodySchema = personSchema.omit({
+  id: true,
 });
 
-export const createPersonResponseSchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  birthdate: z.coerce.date(),
-});
+export const createPersonResponseSchema = personSchema;
 
 // Update person by ID
 export const updatePersonByIdParamsSchema = z.object({
   id: z.coerce.number(),
 });
 
-export const updatePersonByIdBodySchema = z.object({
-  name: z.string(),
-  birthdate: z.coerce.date(),
-  application: z.string(),
-  metadata: z.record(z.string(), z.string()).nullable(),
+export const updatePersonByIdBodySchema = personSchema.omit({
+  id: true,
 });
 
-export const updatePersonByIdResponseSchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  birthdate: z.coerce.date(),
-  communications: z.array(communicationSchema),
-});
+export const updatePersonByIdResponseSchema = personSchema
 
 // Get person by ID
 export const getPersonByIdParamsSchema = z.object({
   id: z.coerce.number(),
 });
 
-export const getPersonByIdResponseSchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  birthdate: z.coerce.date(),
-  communications: z.array(communicationSchema),
-});
+export const getPersonByIdResponseSchema = personSchema;
 
 // Get people
 export const getPeopleQuerySchema = z.object({
@@ -60,12 +42,5 @@ export const getPeopleQuerySchema = z.object({
 
 export const getPeopleResponseSchema = z.object({
   count: z.number(),
-  people: z.array(
-    z.object({
-      id: z.number(),
-      name: z.string(),
-      birthdate: z.coerce.date(),
-      communications: z.array(communicationSchema),
-    })
-  ),
+  people: z.array(personSchema),
 });
