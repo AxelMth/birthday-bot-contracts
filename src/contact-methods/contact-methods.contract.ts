@@ -1,7 +1,5 @@
 import { initContract } from '@ts-rest/core';
-import { z } from 'zod';
 import {
-  contactMethodSchema,
   getContactMethodsResponseSchema,
 } from './contact-methods.schema.js';
 import { errorBodySchema } from '../common/schemas/error.schema.js';
