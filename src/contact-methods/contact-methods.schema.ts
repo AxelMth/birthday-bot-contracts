@@ -6,4 +6,6 @@ export const contactMethodSchema = z.object({
   metadata: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.null()])).nullable(),
 });
 
-export const getContactMethodsResponseSchema = z.array(contactMethodSchema);
+export const getContactMethodsResponseSchema = z.object({
+  contactMethods: z.array(contactMethodSchema),
+});
