@@ -14,7 +14,7 @@ export const getNextBirthdaysUntilResponseSchema = z.object({
   people: z.array(
     z.object({
       name: z.string(),
-      birthdate: z.date(),
+      birthDate: z.date(),
     })
   ),
 });

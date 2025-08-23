@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const personSchema = z.object({
   id: z.number(),
   name: z.string(),
-  birthdate: z.coerce.date().nullable(),
+  birthDate: z.coerce.date().nullable(),
   application: z.string().nullable(),
   applicationMetadata: z.record(z.string(), z.union([z.string(), z.number(), z.boolean(), z.null()])).nullable(),
 });
