@@ -49,15 +49,14 @@ export const peopleContract = c.router({
     pathParams: getPersonByIdParamsSchema,
     summary: 'Get person by id',
   },
-
   getPaginatedPeople: {
     method: 'GET',
     path: '/api/people',
+    query: getPeopleQuerySchema,
     responses: {
       200: getPeopleResponseSchema,
       500: errorBodySchema,
     },
-    query: getPeopleQuerySchema,
     summary: 'Get people',
   },
   deletePersonById: {
