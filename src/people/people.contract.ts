@@ -13,6 +13,7 @@ import {
   deletePersonByIdParamsSchema,
 } from './people.schema.js';
 import { errorBodySchema } from '../common/schemas/error.schema.js';
+import { z } from 'zod';
 
 const c = initContract();
 
@@ -63,6 +64,7 @@ export const peopleContract = c.router({
     method: 'DELETE',
     path: '/api/people/:id',
     pathParams: deletePersonByIdParamsSchema,
+    body: z.undefined(),
     responses: {
       200: deletePersonByIdResponseSchema,
       500: errorBodySchema,
