@@ -9,6 +9,8 @@ import {
   updatePersonByIdParamsSchema,
   updatePersonByIdBodySchema,
   updatePersonByIdResponseSchema,
+  deletePersonByIdResponseSchema,
+  deletePersonByIdParamsSchema,
 } from './people.schema.js';
 import { errorBodySchema } from '../common/schemas/error.schema.js';
 
@@ -56,5 +58,14 @@ export const peopleContract = c.router({
     },
     query: getPeopleQuerySchema,
     summary: 'Get people',
+  },
+  deletePersonById: {
+    method: 'DELETE',
+    path: '/api/people/:id',
+    pathParams: deletePersonByIdParamsSchema,
+    responses: {
+      200: deletePersonByIdResponseSchema,
+      500: errorBodySchema,
+    },
   },
 });

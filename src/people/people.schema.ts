@@ -44,3 +44,9 @@ export const getPeopleResponseSchema = z.object({
   count: z.number(),
   people: z.array(personSchema),
 });
+
+export const deletePersonByIdResponseSchema = personSchema;
+
+export const deletePersonByIdParamsSchema = z.object({
+  id: z.coerce.number(),
+});
