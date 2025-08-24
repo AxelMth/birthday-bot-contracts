@@ -45,7 +45,9 @@ export const getPeopleResponseSchema = z.object({
   people: z.array(personSchema),
 });
 
-export const deletePersonByIdResponseSchema = personSchema;
+export const deletePersonByIdResponseSchema = z.object({
+  success: z.boolean(),
+});
 
 export const deletePersonByIdParamsSchema = z.object({
   id: z.coerce.number(),
