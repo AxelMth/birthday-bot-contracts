@@ -5,7 +5,7 @@ export const communicationSchema = z.object({
   personName: z.string(),
   applicationName: z.string(),
   message: z.string(),
-  sendAt: z.coerce.date(),
+  sentAt: z.coerce.date(),
 });
 
 export const getPaginatedCommunicationsQuerySchema = z.object({
