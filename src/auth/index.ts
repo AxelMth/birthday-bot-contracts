@@ -1,2 +1,2 @@
-export { contractMethodsContract } from './auth.contract';
-export { contactMethodSchema, getContactMethodsResponseSchema } from './auth.schema';
+export { authContract } from './auth.contract';
+export { authValidateHeadersSchema } from './auth.schema';
