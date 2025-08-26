@@ -1,3 +1,4 @@
+import { personSchema } from 'src/common/schemas/person.schema';
 import { z } from 'zod';
 
 export const sendTodayBirthdayMessagesBodySchema = z.undefined()
@@ -11,10 +12,6 @@ export const getNextBirthdaysUntilQuerySchema = z.object({
 });
 
 export const getNextBirthdaysUntilResponseSchema = z.object({
-  people: z.array(
-    z.object({
-      name: z.string(),
-      birthDate: z.date(),
-    })
-  ),
+  people: z.array(personSchema),
 });
+  
