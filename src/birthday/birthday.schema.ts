@@ -1,4 +1,4 @@
-import { personSchema } from 'src/common/schemas/person.schema';
+import { personSchema } from '../common/schemas/person.schema.js';
 import { z } from 'zod';
 
 export const sendTodayBirthdayMessagesBodySchema = z.undefined()

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { personSchema } from '../common/schemas/person.schema';
+import { personSchema } from '../common/schemas/person.schema.js';
 
 // Create person
 export const createPersonBodySchema = personSchema.omit({
